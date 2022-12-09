@@ -1,5 +1,3 @@
-import 'package:e_wallet_mobile_app/pages/screens/auth/screens/login_screen.dart';
-import 'package:e_wallet_mobile_app/pages/screens/auth/screens/register_screen.dart';
 import 'package:e_wallet_mobile_app/pages/screens/auth/widgets/curve_painter.dart';
 import 'package:e_wallet_mobile_app/pages/widgets/custom_elevated_button.dart';
 import 'package:e_wallet_mobile_app/styles/constant.dart';
@@ -25,7 +23,7 @@ class MainAuthScreen extends StatelessWidget {
           children: [
             Container(
               width: SizeConfig.screenWidth,
-              height: SizeConfig.screenHeight * 0.95,
+              height: SizeConfig.screenHeight * 0.85,
               child: Stack(
                 children: [
                   Container(
@@ -55,24 +53,26 @@ class MainAuthScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset("assets/images/Icon.png"),
-                        SizedBox(height: 10),
+                        Image.asset("assets/images/Icon1.png"),
+                        //Container(height:70,child: Lottie.asset('assets/images/profile.json')),
+
+                        SizedBox(height: 5),
                         Text(
-                          "MasterTab",
+                          "ماستر تاب",
                           style: Theme.of(context)
                               .textTheme
                               .headline1!
-                              .copyWith(fontSize: 30),
+                              .copyWith(fontSize: 0.001),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 5),
                         Text(
-                          "The Best Way to Manage your Activities ",
+                          "أفضل وسيلة لإدارة حساباتك",
                           style: Theme.of(context)
                               .textTheme
                               .headline1!
                               .copyWith(fontSize: 14),
                         ),
-                        SizedBox(height: 50),
+                        SizedBox(height: 30),
                         Container(
                             child: Opacity(
                               opacity: 1,
@@ -89,8 +89,8 @@ class MainAuthScreen extends StatelessWidget {
                               child: Column(
                                 children: [
                                   CustomTextField(
-                                    title: "Email",
-                                    hint: "Enter your email",
+                                    title: "رقم الموبايل",
+                                    hint: "رقم الموبايل المرتبط بحسابك",
                                     textEditingController: _emailController,
                                   ),
                                   SizedBox(height: 30),
@@ -98,8 +98,8 @@ class MainAuthScreen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       CustomTextField(
-                                        title: "Password",
-                                        hint: "Enter your password",
+                                        title: "كلمة المرور",
+                                        hint: "يجب التأكد من كلمة المرور قبل كتابتها",
                                         textEditingController:
                                             _passwordController,
                                       ),
@@ -108,7 +108,7 @@ class MainAuthScreen extends StatelessWidget {
                                         onTap: () =>
                                             Get.to(() => ForgetPasswordScreen()),
                                         child: Text(
-                                          "Forget password?",
+                                          "هل نسيت كلمة المرور ؟",
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline4,
@@ -120,7 +120,7 @@ class MainAuthScreen extends StatelessWidget {
                                   Container(
                                     width: SizeConfig.screenWidth * 0.75,
                                     child: CustomElevatedButton(
-                                      label: "Login",
+                                      label: "تسجيل دخول",
                                       color: k_blue,
                                       onPressed: () =>
                                           Get.off(() => E_WalletLayoutScreen()),

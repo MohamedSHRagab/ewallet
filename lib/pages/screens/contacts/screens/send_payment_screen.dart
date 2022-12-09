@@ -28,8 +28,9 @@ class SendPaymentScreen extends StatelessWidget {
               onPressed: () => Get.back(),
             ),
             title: Text(
-              "Send Money",
-              style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 20),
+              "تحويل رصيد",
+              style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 20,fontWeight: FontWeight.bold),
+
             ),
             centerTitle: true,
           ),
@@ -65,10 +66,10 @@ class SendPaymentScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: PaymentAmountTextField(
-                    amount: 12.6,
-                    color: k_yellow,
+                    amount: 100,
+                    color: k_blue,
                     textEditingController: _amountTextEditingController,
-                    title: "Payment Amount",
+                    title: "مبلغ التحويل",
                   ),
                 ),
                 Padding(
@@ -81,14 +82,14 @@ class SendPaymentScreen extends StatelessWidget {
             ),
           ),
           bottomNavigationBar: CustomButtonNavigationBar(
-            color: k_yellow,
-            label: "Send Payment",
+            color: k_blue,
+            label: "ارسال الرصيد",
             imagePath: "assets/images/send_icon.png",
             onPress: () {
               showDialog(
                 context: context,
                 builder: (ctx) =>
-                    CustomAlertSuccessPayment(message: "The amount has been sent successfully!"),
+                    CustomAlertSuccessPayment(message: "تم ارسال الرصيد بنجاح!"),
               );
             },
           )),

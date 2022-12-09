@@ -17,7 +17,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
         title: Text(
-          "Reset Password",
+          "استعادة كلمة المرور",
           style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22),
         ),
         centerTitle: true,
@@ -27,13 +27,13 @@ class ForgetPasswordScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Enter your email to send instruction to reset your password",
+              "يرجي ادخال رقم الموبايل المرتبط بحسابك والتأكد من إمكانية استقبال الرسائل والمكالمات من خلاله",
               style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 16),
             ),
             SizedBox(height: 40),
             CustomTextField(
-              title: "Email",
-              hint: "Enter your email",
+              title: "رقم الموبايل",
+              hint: "رقم الموبايل المرتبط بحسابك",
               textEditingController: _emailController,
             ),
           ],
@@ -41,7 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
       ),
       bottomNavigationBar: CustomButtonNavigationBar(
         color: k_blue,
-        label: "Send Email",
+        label: "متابعة",
         onPress: () {},
       ),
     );

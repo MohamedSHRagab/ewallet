@@ -1,9 +1,9 @@
 import 'package:e_wallet_mobile_app/pages/screens/home/screens/requests_screen.dart';
+import 'package:e_wallet_mobile_app/pages/screens/profile/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_wallet_mobile_app/models/user_model.dart';
 import 'package:e_wallet_mobile_app/pages/screens/home/widgets/build_home_user_item.dart';
-import 'package:e_wallet_mobile_app/pages/widgets/user_image.dart';
 import 'package:e_wallet_mobile_app/styles/Iconly-Broken_icons.dart';
 import 'package:e_wallet_mobile_app/styles/constant.dart';
 import 'package:e_wallet_mobile_app/styles/size_config.dart';
@@ -24,10 +24,10 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   color: k_blue,
                   width: SizeConfig.screenWidth,
-                  height: 270,
+                  height: 160,
                 ),
                 Container(
-                  height: 270,
+                  height: 160,
                   width: SizeConfig.screenWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(25),
@@ -35,38 +35,27 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              "ماستر تاب",
-                              style: Theme.of(context).textTheme.headline1!.copyWith(
-                                    fontSize: 30,
-                                fontWeight: FontWeight.bold
-                                  ),
+                              mainUser.name,
+                              style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
                             ),
-                       Container(height:80,child: Lottie.asset('assets/images/profile.json')),
 
-        ],
-                        ),
-                        SizedBox(height: 0),
-                        Text(
-                          mainUser.name,
-                          style: TextStyle(color: Colors.white54,fontSize: 18),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          "اجمالي الرصيد",
-style: TextStyle(color: Colors.white,fontSize: 15),
-                        ),
-                        SizedBox(height: 0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "  ${mainUser.totalAmount}  ",
-                              style: Theme.of(context).textTheme.headline1!.copyWith(
-                                    fontSize: 25,
+                            InkWell(
+                              onTap: () => Get.to(() => RequestsScreen()),
+                              child: Stack(
+                                alignment: Alignment.topRight,
+                                children: [
+                                  Container(
+                                    child: Icon(
+                                      Iconly_Broken.Chat,
+                                      color: Colors.blue,
+                                      size: 33,
+                                    ),
                                   ),
+                                ],
+                              ),
                             ),
                             InkWell(
                               onTap: () => Get.to(() => RequestsScreen()),
@@ -81,15 +70,40 @@ style: TextStyle(color: Colors.white,fontSize: 15),
                                     ),
                                   ),
                                   Container(
-                                    width: 9,
-                                    height: 9,
+                                    width: 11,
+                                    height: 11,
                                     decoration: BoxDecoration(
-                                      color: Colors.yellow,
+                                      color: Colors.red,
                                       shape: BoxShape.circle,
                                     ),
                                   ),
                                 ],
                               ),
+                            ),
+
+
+                            InkWell(
+                              onTap: () => Get.to(() => ProfileScreen()),
+                              child: Stack(
+                                alignment: Alignment.topRight,
+                                children: [
+                                  Container(height:55,child: Lottie.asset('assets/images/profile.json')),
+                                ],
+                              ),
+                            ),
+        ],
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "اجمالي الرصيد :",
+                              style: TextStyle(color: Colors.yellow,fontSize: 22,fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "  ${mainUser.totalAmount}  ",
+                              style: TextStyle(color: Colors.yellow,fontSize: 22,fontWeight: FontWeight.bold),
                             ),
                           ],
                         )
@@ -100,13 +114,16 @@ style: TextStyle(color: Colors.white,fontSize: 15),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "اخر التعاملات",
-                    style: Theme.of(context).textTheme.headline2,
+                    "اخر المعاملات",
+                    style: Theme.of(context).textTheme.headline2!.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
                   ),
                   TextButton(
                     onPressed: () {},
@@ -115,7 +132,10 @@ style: TextStyle(color: Colors.white,fontSize: 15),
                     ),
                     child: Text(
                       "عرض الكل ",
-                      style: Theme.of(context).textTheme.headline4!.copyWith(fontSize: 16),
+                      style: Theme.of(context).textTheme.headline4!.copyWith(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
                     ),
                   ),
                 ],

@@ -15,7 +15,7 @@ class PaymentNoteTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 35),
-        Text("Payment Note", style: Theme.of(context).textTheme.headline2),
+        Text("ملاحظة", style: Theme.of(context).textTheme.headline2),
         SizedBox(height: 10),
         TextFormField(
           cursorColor: k_fontGrey,
@@ -23,9 +23,9 @@ class PaymentNoteTextField extends StatelessWidget {
           enableSuggestions: true,
           autocorrect: false,
           controller: textEditingController,
-          maxLines: 7,
+          maxLines: 1,
           decoration: InputDecoration(
-            hintText: "Add payment note",
+            hintText: "اكتب ملاحظات خاصة بعملية التحويل",
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
               borderSide: BorderSide(

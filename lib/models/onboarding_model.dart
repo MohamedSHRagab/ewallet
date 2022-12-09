@@ -11,20 +11,20 @@ class _OnboardingModel {
 
 final List<_OnboardingModel> onboardingModel = [
   _OnboardingModel(
-    title: 'Add all accounts & manage',
-    subTitle: 'You can add all accounts in one place and use it to send and request.',
-    imagePath: 'assets/images/one.json',
+    title: 'فريق ماستر تاب',
+    subTitle: 'اهلا بيك في فريق ماستر تاب.',
+    imagePath: 'assets/images/Team.json',
   ),
 
   _OnboardingModel(
-    title: 'Track your activity',
-    subTitle: 'You can track your income, expenses activities and all statistics.',
-    imagePath: 'assets/images/two.json',
+    title: 'حماية البيانات',
+    imagePath: 'assets/images/tow.json',
+    subTitle: 'نعمل علي حماية البيانات من خلالنا ولكن يتبقي دورك في حماية الهاتف الخاص بيك.',
   ),
 
   _OnboardingModel(
-    title: 'Send & request payments',
-    subTitle: 'You can send or recieve any payments from yous accounts.',
-    imagePath: 'assets/images/four.json',
+    title: 'ارسال واستقبال الرصيد',
+    subTitle: 'يمكنك ارسال الرصيد ومتابعة التقارير من خلال التطبيق بسهولة تامة .',
+    imagePath: 'assets/images/one1.json',
   ),
 ];

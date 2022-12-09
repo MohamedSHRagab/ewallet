@@ -17,8 +17,8 @@ class RequestsScreen extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            "الطلبات",
-            style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 20),
+            "الإشعارات",
+            style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_new, color: k_black),
@@ -31,32 +31,8 @@ class RequestsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  width: SizeConfig.screenWidth,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: k_grey,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: RichText(
-                    text: TextSpan(
-                      text: "Total Amount: ",
-                      style: Theme.of(context).textTheme.headline2,
-                      children: const <TextSpan>[
-                        TextSpan(
-                          text: "\$105.5",
-                          style: TextStyle(
-                            color: k_yellow,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
                 SizedBox(height: 15),
-                Text("October, 2020"),
+                Text("اكتوبر , 2020"),
                 SizedBox(height: 15),
                 ListView.separated(
                   shrinkWrap: true,
@@ -72,12 +48,6 @@ class RequestsScreen extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        bottomNavigationBar: CustomButtonNavigationBar(
-          color: k_yellow,
-          label: "Send All Payment",
-          imagePath: "assets/images/send_icon.png",
-          onPress: () {},
         ),
       ),
     );

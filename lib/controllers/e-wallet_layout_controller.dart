@@ -21,10 +21,9 @@ class E_WalletLayoutController {
   static int currentIndex = 0;
   static List<_BoardingItem> item = [
     _BoardingItem(label: "الرئيسية", icon: Icon(Iconly_Broken.Home), screen: HomeScreen()),
-    _BoardingItem(
-        label: "المعاملات", icon: Icon(Iconly_Broken.Wallet), screen: TransactionsScreen()),
+    _BoardingItem(label: "المعاملات", icon: Icon(Iconly_Broken.Wallet), screen: TransactionsScreen()),
     _BoardingItem(label: "العملاء", icon: Icon(Iconly_Broken.User1), screen: ContactsScreen()),
-    _BoardingItem(label: "الحساب ", icon: Icon(Iconly_Broken.User), screen: ProfileScreen()),
+    // _BoardingItem(label: "الحساب ", icon: Icon(Iconly_Broken.User), screen: ProfileScreen()),
   ];
 
   static void changeIndex(int newIndex) {

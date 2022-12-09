@@ -26,7 +26,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
               backgroundColor: Colors.transparent,
               title: Text(
                 "المعاملات",
-                style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22),
+                style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
               actions: [
@@ -55,6 +55,28 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                         width: double.infinity,
                         height: double.infinity,
                         child: ElevatedButton(
+                          child: Text("الكل", style: Theme.of(context).textTheme.headline2),
+                          onPressed: () {
+                            setState(() {
+                              _toggleButton = true;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: _toggleButton ? k_yellow : k_grey,
+                            elevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        child: ElevatedButton(
                           child: Text("الوارد", style: Theme.of(context).textTheme.headline2),
                           onPressed: () {
                             setState(() {
@@ -62,7 +84,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: _toggleButton ? k_yellow : k_grey,
+                            backgroundColor: _toggleButton ? k_yellow : k_grey,
                             elevation: 0.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
@@ -83,7 +105,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: _toggleButton ? k_grey : k_yellow,
+                            backgroundColor: _toggleButton ? k_grey : k_yellow,
                             elevation: 0.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),

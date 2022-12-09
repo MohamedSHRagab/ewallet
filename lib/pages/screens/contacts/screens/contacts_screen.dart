@@ -18,7 +18,7 @@ class ContactsScreen extends StatelessWidget {
            
               title: Text(
                 "العملاء",
-                style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22),
+                style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
               actions: [
@@ -47,7 +47,7 @@ class ContactsScreen extends StatelessWidget {
                     child: TextFormField(
                       controller: _textEditingController,
                       decoration: InputDecoration(
-                        hintText: "اسم العميل ٫٫",
+                        hintText: "اسم العميل - رقم الموبايل",
                         border: InputBorder.none,
                         prefixIcon: Image.asset("assets/images/search_icon.png", color: k_fontGrey),
                       ),
@@ -63,7 +63,7 @@ class ContactsScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: usersList.length,
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 15);
+                  return SizedBox(height: 10);
                 },
                 itemBuilder: (BuildContext context, int index) {
                   return BuildContactItem(user: usersList[index]);

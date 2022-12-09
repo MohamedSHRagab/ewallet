@@ -19,7 +19,7 @@ class CustomAlertSuccessPayment extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/images/sent_illustration.png"),
+          Image.asset("assets/images/done.gif"),
           SizedBox(height: 20),
           Text(
             message,
@@ -33,11 +33,11 @@ class CustomAlertSuccessPayment extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => Get.back(),
               style: ElevatedButton.styleFrom(
-                primary: k_blue,
+                backgroundColor: k_blue,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
               child: Text(
-                "Ok, Thanks!",
+                "تم",
                 style: Theme.of(context).textTheme.headline1!.copyWith(
                       fontSize: 16,
                     ),
