@@ -1,11 +1,9 @@
 import 'package:e_wallet_mobile_app/models/user_model.dart';
 import 'package:e_wallet_mobile_app/pages/screens/home/widgets/build_user_request_item.dart';
-import 'package:e_wallet_mobile_app/pages/widgets/custom_button_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:e_wallet_mobile_app/styles/constant.dart';
-import 'package:e_wallet_mobile_app/styles/size_config.dart';
 
 class RequestsScreen extends StatelessWidget {
   const RequestsScreen({Key? key}) : super(key: key);
