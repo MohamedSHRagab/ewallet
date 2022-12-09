@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 11,
                                     height: 11,
                                     decoration: BoxDecoration(
-                                      color: Colors.red,
+                                      color: Colors.yellow[900],
                                       shape: BoxShape.circle,
                                     ),
                                   ),
