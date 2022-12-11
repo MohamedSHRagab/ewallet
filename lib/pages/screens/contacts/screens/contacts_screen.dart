@@ -15,11 +15,11 @@ class ContactsScreen extends StatelessWidget {
         child: Column(
           children: [
             AppBar(
-           
               title: Text(
                 "العملاء",
                 style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
               ),
+              // backgroundColor: Colors.blue,
               centerTitle: true,
               actions: [
                 IconButton(
@@ -35,11 +35,11 @@ class ContactsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Container(
-                height: 60,
+                height: 40,
                 decoration: BoxDecoration(
-                  // color: Colors.white,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: k_fontGrey),
+                  border: Border.all(color: k_blue),
                 ),
                 child: Center(
                   child: Padding(
@@ -49,7 +49,7 @@ class ContactsScreen extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: "اسم العميل - رقم الموبايل",
                         border: InputBorder.none,
-                        prefixIcon: Image.asset("assets/images/search_icon.png", color: k_fontGrey),
+                        prefixIcon: Image.asset("assets/images/search_icon.png", color: Colors.blue),
                       ),
                     ),
                   ),
@@ -57,13 +57,13 @@ class ContactsScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
               child: ListView.separated(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: usersList.length,
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 10);
+                  return SizedBox(height: 20);
                 },
                 itemBuilder: (BuildContext context, int index) {
                   return BuildContactItem(user: usersList[index]);

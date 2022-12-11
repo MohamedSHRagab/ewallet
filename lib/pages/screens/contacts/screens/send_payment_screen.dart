@@ -83,7 +83,7 @@ class SendPaymentScreen extends StatelessWidget {
           ),
           bottomNavigationBar: CustomButtonNavigationBar(
             color: k_blue,
-            label: "ارسال الرصيد",
+            label: "ارسال",
             imagePath: "assets/images/send_icon.png",
             onPress: () {
               showDialog(

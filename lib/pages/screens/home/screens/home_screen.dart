@@ -54,6 +54,7 @@ class HomeScreen extends StatelessWidget {
                                       size: 33,
                                     ),
                                   ),
+                                  SizedBox(width: 50),
                                 ],
                               ),
                             ),
@@ -69,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                                       size: 33,
                                     ),
                                   ),
+                                  SizedBox(width: 50),
                                   Container(
                                     width: 11,
                                     height: 11,
@@ -80,14 +82,13 @@ class HomeScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-
-
                             InkWell(
                               onTap: () => Get.to(() => ProfileScreen()),
                               child: Stack(
                                 alignment: Alignment.topRight,
                                 children: [
                                   Container(height:55,child: Lottie.asset('assets/images/profile.json')),
+                                  SizedBox(width: 50),
                                 ],
                               ),
                             ),
@@ -103,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             Text(
                               "  ${mainUser.totalAmount}  ",
-                              style: TextStyle(color: Colors.yellow,fontSize: 22,fontWeight: FontWeight.bold),
+                              style: TextStyle(color: Colors.yellow,fontSize: 24,fontWeight: FontWeight.bold),
                             ),
                           ],
                         )
