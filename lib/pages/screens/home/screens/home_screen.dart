@@ -24,44 +24,34 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   color: k_blue,
                   width: SizeConfig.screenWidth,
-                  height: 160,
+                  height: 170,
                 ),
                 Container(
-                  height: 160,
+                  height: 170,
                   width: SizeConfig.screenWidth,
                   child: Padding(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              mainUser.name,
-                              style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                            InkWell(
+                              onTap: () => Get.to(() => ProfileScreen()),
+                              child: Stack(
+                                alignment: Alignment.topLeft,
+                                children: [
+                                  Container(height:55,child: Lottie.asset('assets/images/profile.json')),
+                                  SizedBox(width: 50),
+                                ],
+                              ),
                             ),
 
                             InkWell(
                               onTap: () => Get.to(() => RequestsScreen()),
                               child: Stack(
-                                alignment: Alignment.topRight,
-                                children: [
-                                  Container(
-                                    child: Icon(
-                                      Iconly_Broken.Chat,
-                                      color: Colors.blue,
-                                      size: 33,
-                                    ),
-                                  ),
-                                  SizedBox(width: 50),
-                                ],
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () => Get.to(() => RequestsScreen()),
-                              child: Stack(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment.topLeft,
                                 children: [
                                   Container(
                                     child: Icon(
@@ -83,14 +73,25 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             InkWell(
-                              onTap: () => Get.to(() => ProfileScreen()),
+                              onTap: () => Get.to(() => RequestsScreen()),
                               child: Stack(
-                                alignment: Alignment.topRight,
+                                alignment: Alignment.topLeft,
                                 children: [
-                                  Container(height:55,child: Lottie.asset('assets/images/profile.json')),
+                                  Container(
+                                    child: Icon(
+                                      Iconly_Broken.Chat,
+                                      color: Colors.blue,
+                                      size: 33,
+                                    ),
+                                  ),
                                   SizedBox(width: 50),
                                 ],
                               ),
+                            ),
+                            SizedBox(width: 30),
+                            Text(
+                              mainUser.name,
+                              style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
                             ),
         ],
                         ),
@@ -99,12 +100,38 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "اجمالي الرصيد :",
-                              style: TextStyle(color: Colors.yellow,fontSize: 22,fontWeight: FontWeight.bold),
-                            ),
-                            Text(
                               "  ${mainUser.totalAmount}  ",
                               style: TextStyle(color: Colors.yellow,fontSize: 24,fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              ": اجمالي الرصيد",
+                              style: TextStyle(color: Colors.yellow,fontSize: 22,fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "  ${mainUser.totalAmount}  ",
+                              style: TextStyle(color: Colors.yellow,fontSize: 20,fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              ": الرصيد الاساسي",
+                              style: TextStyle(color: Colors.yellow,fontSize: 18,fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "  ${mainUser.totalAmount}  ",
+                              style: TextStyle(color: Colors.yellow,fontSize: 20,fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              ": رصيد الكاش",
+                              style: TextStyle(color: Colors.yellow,fontSize: 18,fontWeight: FontWeight.bold),
                             ),
                           ],
                         )
@@ -115,7 +142,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

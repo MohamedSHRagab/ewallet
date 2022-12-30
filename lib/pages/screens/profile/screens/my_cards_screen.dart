@@ -139,8 +139,7 @@ class MyCardsScreen extends StatelessWidget {
                 },
                 child: Image.asset("assets/images/remove_icon.png"),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                  primary: Colors.red,
+                  padding: EdgeInsets.zero, backgroundColor: Colors.red,
                   textStyle: Theme.of(context).textTheme.headline1!.copyWith(
                         fontSize: 15,
                       ),

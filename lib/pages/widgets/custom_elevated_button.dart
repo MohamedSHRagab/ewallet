@@ -26,8 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
         child: ElevatedButton.icon(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.zero,
-            primary: color,
+            padding: EdgeInsets.zero, backgroundColor: color,
             textStyle: Theme.of(context).textTheme.headline1!.copyWith(
                   fontSize: 15,
                 ),
@@ -54,9 +53,8 @@ class CustomElevatedButton extends StatelessWidget {
         child: ElevatedButton.icon(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.zero, backgroundColor: color,
             elevation: elevation,
-            primary: color,
             textStyle: Theme.of(context).textTheme.headline1!.copyWith(
                   fontSize: 15,
                 ),
@@ -83,9 +81,8 @@ class CustomElevatedButton extends StatelessWidget {
         child: ElevatedButton.icon(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.zero, backgroundColor: color,
             elevation: elevation,
-            primary: color,
             textStyle: Theme.of(context).textTheme.headline1!.copyWith(
                   fontSize: 15,
                 ),
